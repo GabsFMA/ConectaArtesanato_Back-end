@@ -1,0 +1,1 @@
+// JSON response for health check endpoint
