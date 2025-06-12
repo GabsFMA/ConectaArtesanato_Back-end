@@ -32,7 +32,6 @@ const orderSchema = new mongoose.Schema({
   orderStatus: { type: String, enum: ['Aguardando Pagamento', 'Em Preparação', 'Enviado', 'Entregue', 'Cancelado'], default: 'Aguardando Pagamento' },
   paymentInfo: { // Collection of payment information
     paymentMethod: { type: String },
-    gatewayPaymentStatus: { type: String },
   },
   estimatedDeliveryDate: { type: Date },
   actualDeliveryDate: { type: Date },

@@ -21,11 +21,11 @@ const addressSchema = new mongoose.Schema(
 const artisanSchema = new mongoose.Schema({
   fullName: { type: String, required: true },
   brandName: { type: String, required: true },
+  cpf_cnpj: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true, lowercase: true },
   password: { type: String, required: true, select: false },
   profilePictureURL: { type: String }, // Optional profile picture URL
   personalData: { // Collection of personal data
-    cpf_cnpj: { type: String, required: true, unique: true },
     birthDate: { type: Date },
     phone: [{ type: String }],
   },
