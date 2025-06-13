@@ -6,6 +6,9 @@ import Product from "../models/Product.js";
  * @desc    Select logged user's profile
  * @route   GET /api/profile/me
  * @access  Private
+ * Example request body for fetching the profile:
+ *   curl -X GET -H "Authorization: Bearer <USER_JWT_TOKEN>" \
+ *   http://localhost:3001/api/profile/me
  */
 const getMyProfile = async (req, res) => {
   // Try to fetch the profile based on the user's role
@@ -47,6 +50,12 @@ const getMyProfile = async (req, res) => {
  * @desc    Update logged user's profile
  * @route   PUT /api/profile/me
  * @access  Private
+ * Example request body for updating the profile:
+ * curl -X PUT -H "Authorization: Bearer <USER_JWT_TOKEN>" \
+ *   -H "Content-Type: application/json" \
+ *   #For Client: -d '{"fullName": "New Name", "phone": ["+5571999998888"]}' \
+ *   #For Artisan: -d '{"fullName": "New Name", "artInfo": "New Art Info", "description": "New Description", "addresses": [{"street": "New Street", "number": 456, "city": "New City", "state": "New State", "zip": "65432-109"}], "phone": ["+5571999998888"]}' \
+ *   http://localhost:3001/api/profile/me
  */
 const updateMyProfile = async (req, res) => {
   // Try to update the profile based on the user's role

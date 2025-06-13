@@ -7,6 +7,35 @@ import jwt from "jsonwebtoken";
  * @desc    Register a new user (client or artisan)
  * @route   POST /api/auth/register
  * @access  Public
+ * Example request body for client registration:
+ *   curl -X POST -H "Content-Type: application/json" \
+ *   -d '{"fullName": "Client Example", "email": "client@example.com", "password": "YourPassword123!", "role": "client"}' \
+ *   http://localhost:3001/api/auth/register
+ * 
+ * Example request body for artisan registration:
+ *   curl -X POST -H "Content-Type: application/json" \
+ *   -d '{
+ *     "fullName": "Artisan Example",
+ *     "email": "artisan@example.com",
+ *     "password": "YourPassword123!",
+ *     "role": "artisan",
+ *     "brandName": "Artisan Brand",
+ *     "cpf_cnpj": "123.456.789-00",
+ *     "birthDate": "1990-01-01",
+ *     "phone": ["+5571999998888"],
+ *     "description": "Artisan description",
+ *     "artInfo": "Artisan information",
+ *     "addresses": [
+ *       {
+ *         "street": "Rua Example",
+ *         "number": 123,
+ *         "city": "Salvador",
+ *         "state": "BA",
+ *         "zip": "01234-567"
+ *       }
+ *     ]
+ *   }' \
+ *   http://localhost:3001/api/auth/register
  */
 const register = async (req, res) => {
     // Validates the request body
@@ -151,6 +180,11 @@ const register = async (req, res) => {
  * @desc    Authenticates a user and returns a token (client or artisan)
  * @route   POST /api/auth/login
  * @access  Public
+ * Example request body for user login:
+ *   curl -X POST -H "Content-Type: application/json" \
+ *   -d '{"email": "user@example.com", "password": "YourPassword123!"}' \
+ *   http://localhost:3001/api/auth/login
+ *
  */
 const login = async (req, res) => {
   const { email, password } = req.body;

@@ -6,6 +6,8 @@ import mongoose from "mongoose";
  * @desc    Busca o perfil público de um artesão pelo ID
  * @route   GET /api/artisans/:id
  * @access  Public
+ * Example request to fetch a public artisan profile:
+ *   curl -X GET http://localhost:3001/api/artisans/<ARTISAN_ID>
  */
 const getPublicArtisanProfile = async (req, res) => {
   try {
