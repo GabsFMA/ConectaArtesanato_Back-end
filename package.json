@@ -2,10 +2,10 @@
   "name": "conectaartesanato_back-end",
   "version": "1.0.0",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +21,10 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "jest": "^30.0.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.1"
   }
 }
