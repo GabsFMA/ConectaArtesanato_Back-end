@@ -11,6 +11,7 @@ CLIENT_EMAIL=$(cat "$CLIENT_EMAIL_FILE")
 
 echo "--- 3. Realizando Login do Cliente ---"
 echo "Usando Email: ${CLIENT_EMAIL}"
+echo "Senha: ${CLIENT_PASS}"
 
 response=$(curl -s -X POST \
   -H "Content-Type: application/json" \
