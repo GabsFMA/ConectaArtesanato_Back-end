@@ -3,4 +3,4 @@ node_modules
 
 # Environment Variables
 # Uncomment the next line for commit in production #
-# .env
+.env
